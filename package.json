@@ -4,7 +4,7 @@
   "description": "Container for my AdventOfCode solutions.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --recursive -w --reporter min"
   },
   "repository": {
     "type": "git",
