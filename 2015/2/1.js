@@ -28,4 +28,4 @@ fs.readFile('./input.txt', 'utf8', (err, data) => {
     });
 
     console.log(total);
-})
+});
