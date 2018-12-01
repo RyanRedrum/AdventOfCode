@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const sortInts = (a, b) => a - b;
 
-fs.readFile('./1.txt', 'utf8', (err, data) => {
+fs.readFile('./input.txt', 'utf8', (err, data) => {
     if (err) {
         throw err;
     }
