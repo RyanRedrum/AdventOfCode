@@ -7,7 +7,7 @@ const findSolution = () => {
     fileReader.readStringsFromFile(inputPath, data => {
         const parsedInput = utilities.parseInput(data);
         const asleepHours = utilities.calculateAsleepHours(parsedInput);
-        const solution = utilities.calculatePart1Solution(asleepHours);
+        const solution = utilities.calculatePart2Solution(asleepHours);
 
         console.log(solution);
     });

@@ -41,8 +41,16 @@ describe('Tests for day 4 utilities.', () => {
     it('Determines best guard correctly.', () => {
         const parsedInput = utilities.parseInput(input);
         const asleepHours = utilities.calculateAsleepHours(parsedInput);
-        const solution = utilities.calculateSolution(asleepHours);
+        const solution = utilities.calculatePart1Solution(asleepHours);
 
         assert.equal(solution, 240);
+    });
+
+    it('Determines most sleeping guard.', () => {
+        const parsedInput = utilities.parseInput(input);
+        const asleepHours = utilities.calculateAsleepHours(parsedInput);
+        const solution = utilities.calculatePart2Solution(asleepHours);
+
+        assert.equal(solution, 4455);
     });
 });

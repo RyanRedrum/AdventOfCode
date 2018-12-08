@@ -36,7 +36,7 @@ exports.calculateAsleepHours = input => {
     return timeAsleep;
 };
 
-exports.calculateSolution = input => {
+exports.calculatePart1Solution = input => {
     const guardIds = Array.from(input.keys());
     let mostMinutes = 0;
     let bestGuardId = 0;
@@ -58,6 +58,28 @@ exports.calculateSolution = input => {
             bestMinuteCount = bestGuard.asleepMinutes.get(m);
             bestMinute = m;
         }
+    });
+
+    return bestGuardId * bestMinute;
+};
+
+exports.calculatePart2Solution = input => {
+    const guardIds = Array.from(input.keys());
+    let bestMinute = 0;
+    let bestMinuteCount = 0;
+    let bestGuardId = 0;
+
+    guardIds.forEach(gi => {
+        const guard = input.get(gi);
+        const minutes = Array.from(guard.asleepMinutes.keys());
+        
+        minutes.forEach(m => {
+            if (guard.asleepMinutes.get(m) > bestMinuteCount) {
+                bestMinute = m;
+                bestMinuteCount = guard.asleepMinutes.get(m);
+                bestGuardId = gi;
+            }
+        });
     });
 
     return bestGuardId * bestMinute;
