@@ -3,6 +3,15 @@ const path = require('path');
 const fileReader = require('../../Utilities/FileReader');
 
 describe('File reader utility tests.', () => {
+    it('Can read in a string from a text file.', done => {
+        fileReader.readStringFromFile(path.relative(process.cwd(), './test/Utilities/TestString.txt'), data => {
+            assert.typeOf(data, 'string');
+            assert.equal(data, 'hello world');
+
+            done();
+        });
+    });
+
     it('Can read in an array of strings from a text file.', done => {
         fileReader.readStringsFromFile(path.relative(process.cwd(), './test/Utilities/TestStrings.txt'), data => {
             assert.typeOf(data, 'array');
